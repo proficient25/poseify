@@ -373,6 +373,60 @@
     }
 }
 
+/* Improve form control touch targets on small screens - apply to tablets/mobile */
+@media (max-width: 768px) {
+    .form-control,
+    .form-select,
+    textarea.form-control {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+        min-height: 60px;
+        line-height: 1.3;
+    }
+
+    .form-floating > .form-control,
+    .form-floating > .form-select,
+    .form-floating > textarea.form-control {
+        padding: 1rem 1rem 0.4rem 1rem;
+        min-height: 65px;
+    }
+
+    .form-floating > label {
+        font-size: 1rem;
+        padding-left: 0.3rem;
+    }
+
+    .btn {
+        padding: 1rem 1.2rem;
+        font-size: 1.05rem;
+        min-height: 60px;
+    }
+
+    /* Make form rows stack nicely and inputs full width */
+    .row.g-3 > [class*="col-"] {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    /* Make each column span full width so inputs stack vertically */
+    .row.g-3 > [class*="col-"] {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Increase clickable area for select and date inputs */
+    input[type="date"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="text"],
+    select.form-select {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+}
+
 
 /*** Team ***/
 .team-item {

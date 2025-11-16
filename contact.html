@@ -3,29 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control bg-secondary border-0" placeholder="Additional Details or Special Requests"
-                                        id="message" style="height: 120px"></textarea>
-                                    <label for="message">Additional Details</label>
-                                </div>
-                            </div>
-
-                            <!-- Form message container -->
-                            <div class="col-12">
-                                <div id="formMessage"></div>
-                            </div>
-
-                            <!-- Spinner shown while sending -->
-                            <div class="col-12 text-center my-2 d-none" id="formSpinner">
-                                <div class="spinner-border text-primary" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <button class="btn btn-outline-primary border-2 w-100 py-3" type="submit">Book Model</button>
-                            </div>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap"
@@ -109,7 +86,8 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
                                     <form id="bookingForm">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="title wow fadeInUp" data-wow-delay="0.1s">
                         <div class="title-left">
                             <h5>Get In Touch</h5>
@@ -118,21 +96,21 @@
                     </div>
                         <div class="row g-3">
                             <!-- Personal Information -->
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control bg-secondary border-0" id="name"
                                         placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-floating">
                                     <input type="email" class="form-control bg-secondary border-0" id="email"
                                         placeholder="Your Email" required>
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-floating">
                                     <input type="tel" class="form-control bg-secondary border-0" id="phone"
                                         placeholder="Phone Number" required>
@@ -141,13 +119,13 @@
                             </div>
 
                             <!-- Event Date & Duration -->
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-floating">
                                     <input type="date" class="form-control bg-secondary border-0" id="eventDate" required>
                                     <label for="eventDate">Event Date</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-floating">
                                     <select class="form-select bg-secondary border-0 text-white" id="duration" required>
                                         <option value="">Select Duration</option>
@@ -161,7 +139,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control bg-secondary border-0" id="location"
                                         placeholder="Event Location" required>
@@ -187,12 +165,26 @@
                                 </div>
                             </div>
 
+                            <!-- Inline form message -->
+                            <div class="col-12">
+                                <div id="formMessage"></div>
+                            </div>
+
+                            <!-- Spinner shown while sending -->
+                            <div class="col-12 text-center my-2 d-none" id="formSpinner">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+
                             <div class="col-12">
                                 <button class="btn btn-outline-primary border-2 w-100 py-3" type="submit">Book Model</button>
                             </div>
                         </div>
+                    </div>
                 </div>
-            </div>
+
+            </form>
 
             <!-- Contact Details Below -->
             <div class="row g-5 mt-5">
