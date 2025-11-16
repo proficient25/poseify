@@ -86,7 +86,7 @@
         e.preventDefault();
 
         // Deployed Apps Script Web App URL
-        var webAppUrl = 'https://script.google.com/macros/s/AKfycbzs50LlVKsZIP9NZDZhPDfG1o0v7MmM-lovUzhFB7maDGeusLmMAsiQKEgYqcvX9iqz/exec';
+        var webAppUrl = 'https://script.google.com/macros/s/AKfycbxZkEBPV15lEtEB3n5GUIWTs485IiIeUouMdzvZ-WdwUlP9Ve_g3NS-76MLAhfeytTT/exec';
         if (!webAppUrl || webAppUrl.indexOf('PASTE_YOUR_WEB_APP_URL_HERE') === 0) {
             showFormMessage('Form not configured: please set the Google Apps Script Web App URL in <code>js/main.js</code>.', 'danger');
             return;
@@ -112,9 +112,9 @@
             url: webAppUrl,
             method: 'POST',
             data: JSON.stringify(payload),
-            contentType: 'application/json',
-            dataType: 'json'
+            contentType: 'application/json'
         }).done(function(res) {
+            console.log('Form submission success:', res);
             showFormMessage('Thanks! Your booking request has been sent.', 'success');
             $('#bookingForm')[0].reset();
 
@@ -128,7 +128,8 @@
                 showFormMessage('We Will Contact You Soon.', 'success');
             }
         }).fail(function(xhr, status, err) {
-            showFormMessage('There was a problem sending your request. Please try again later.', 'danger');
+            console.error('Form submission error:', {status: xhr.status, statusText: xhr.statusText, responseText: xhr.responseText, error: err});
+            showFormMessage('There was a problem sending your request. Please try again later. (Error: ' + xhr.status + ')', 'danger');
         }).always(function() {
             $btn.prop('disabled', false).text('Book Model');
             $('#formSpinner').addClass('d-none');
