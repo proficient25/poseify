@@ -18,7 +18,7 @@
 
     // Sticky Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
+        if ($(this).scrollTop() > 100) {
             $('.navbar').addClass('position-fixed bg-dark shadow-sm');
         } else {
             $('.navbar').removeClass('position-fixed bg-dark shadow-sm');
