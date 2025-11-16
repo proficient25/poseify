@@ -620,3 +620,52 @@
         font-size: 24px;
     }
 }
+
+/*** Form Booking Type ***/
+.form-check {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background-color: rgba(52, 58, 64, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.form-check:hover {
+    background-color: rgba(52, 58, 64, 0.8);
+    border-color: var(--bs-primary);
+}
+
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: var(--bs-primary);
+    border: 2px solid var(--bs-primary);
+    cursor: pointer;
+    margin-right: 12px;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+.form-check-input:checked {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.form-check-label {
+    margin-bottom: 0;
+    color: var(--bs-white);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.form-label {
+    color: var(--bs-white);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+    font-size: 15px;
+}
