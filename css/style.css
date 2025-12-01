@@ -254,8 +254,34 @@
     }
     
     .carousel-caption .btn {
-        padding: 0.6rem 1.5rem !important;
-        font-size: 0.9rem;
+        padding: 0.8rem 2rem !important;
+        font-size: 0.95rem !important;
+        min-height: 48px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 576px) {
+    #header-carousel .carousel-item {
+        min-height: 450px;
+    }
+
+    .carousel-caption .title h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .carousel-caption p {
+        font-size: 0.85rem !important;
+        margin-bottom: 1.2rem !important;
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+    }
+
+    .carousel-caption .btn {
+        padding: 0.9rem 2.5rem !important;
+        font-size: 0.95rem !important;
+        min-height: 50px;
+        display: inline-block;
     }
 }
 
