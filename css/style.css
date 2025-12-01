@@ -1,5 +1,9 @@
 /********** Template CSS **********/
 
+html {
+    scroll-padding-top: 80px;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -259,6 +263,10 @@
         min-height: 48px;
         display: inline-block;
     }
+
+    .page-header {
+        padding-top: 140px !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -282,6 +290,10 @@
         font-size: 0.95rem !important;
         min-height: 50px;
         display: inline-block;
+    }
+
+    .page-header {
+        padding-top: 120px !important;
     }
 }
 
