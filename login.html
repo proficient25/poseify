@@ -198,9 +198,11 @@
                     // Login successful
                     loginError.addClass('d-none');
                     
-                    // Store login status in session storage
-                    sessionStorage.setItem('poseifyLoggedIn', 'true');
-                    sessionStorage.setItem('poseifyUser', email);
+                    // Set cookies to persist login for 8 hours
+                    const now = new Date();
+                    const expirationTime = new Date(now.getTime() + 8 * 60 * 60 * 1000); // 8 hours
+                    document.cookie = `poseifyLoggedIn=true; expires=${expirationTime.toUTCString()}; path=/`;
+                    document.cookie = `poseifyUser=${email}; expires=${expirationTime.toUTCString()}; path=/`;
                     
                     // Show success message with custom alert
                     const successAlert = $('<div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fas fa-check-circle me-2"></i><strong>Success!</strong> Welcome to Poseify. Redirecting...<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');

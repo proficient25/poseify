@@ -3,16 +3,40 @@
 
     // ===== LOGIN FUNCTIONALITY =====
     
+    // Helper function to get cookie by name
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.indexOf(nameEQ) === 0) {
+                return decodeURIComponent(cookie.substring(nameEQ.length));
+            }
+        }
+        return null;
+    }
+    
     // Check if user is logged in
     window.isUserLoggedIn = function() {
-        return sessionStorage.getItem('poseifyLoggedIn') === 'true';
+        return getCookie('poseifyLoggedIn') === 'true';
+    };
+
+    // Navigate to page only if logged in
+    window.bookNow = function(page) {
+        if (isUserLoggedIn()) {
+            window.location.href = page || 'contact.html';
+        } else {
+            alert('Please log in to book a model.');
+        }
+        return false;
     };
 
     // Redirect to login if not logged in
     window.requireLogin = function(redirectAfterLogin) {
         if (!isUserLoggedIn()) {
             // Store the page they want to visit after login
-            sessionStorage.setItem('redirectAfterLogin', redirectAfterLogin || 'index.html');
+            const expirationTime = new Date(new Date().getTime() + 1 * 60 * 60 * 1000); // 1 hour
+            document.cookie = `redirectAfterLogin=${redirectAfterLogin || 'index.html'}; expires=${expirationTime.toUTCString()}; path=/`;
             window.location.href = 'login.html';
             return false;
         }
@@ -45,25 +69,34 @@
         }
     };
 
+    // Hide "Login to Access" carousel buttons when logged in
+    window.updateLoginButtonsVisibility = function() {
+        const isLoggedIn = isUserLoggedIn();
+        const carouselLoginButtons = document.querySelectorAll('.carousel-login-btn');
+        
+        carouselLoginButtons.forEach(function(btn) {
+            isLoggedIn ? btn.classList.add('d-none') : btn.classList.remove('d-none');
+        });
+    };
+
     // Logout user
     window.logoutUser = function() {
-        sessionStorage.removeItem('poseifyLoggedIn');
-        sessionStorage.removeItem('poseifyUser');
+        // Clear cookies by setting expiration to past date
+        document.cookie = 'poseifyLoggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+        document.cookie = 'poseifyUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+        document.cookie = 'redirectAfterLogin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+        
         updateLoginButtonVisibility();
+        updateLoginButtonsVisibility(); // Hide login carousel buttons
         alert('You have been logged out.');
         window.location.href = 'index.html';
     };
 
     // Check if user should be redirected after login
     $(document).ready(function() {
-        var redirectAfterLogin = sessionStorage.getItem('redirectAfterLogin');
-        if (redirectAfterLogin && isUserLoggedIn()) {
-            sessionStorage.removeItem('redirectAfterLogin');
-            // Redirect will happen based on button click
-        }
-        
         // Update login button visibility
         updateLoginButtonVisibility();
+        updateLoginButtonsVisibility();
     });
 
     // Spinner
