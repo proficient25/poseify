@@ -238,7 +238,7 @@ html {
     }
     
     .carousel-caption {
-        padding-top: 60px;
+        padding-top: 100px;
         padding-bottom: 60px;
         overflow-y: auto;
         max-height: 100%;
@@ -290,6 +290,10 @@ html {
         font-size: 0.95rem !important;
         min-height: 50px;
         display: inline-block;
+    }
+
+    .carousel-caption {
+        padding-top: 80px !important;
     }
 
     .page-header {
