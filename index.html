@@ -66,8 +66,16 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <!-- Mobile Login/Logout Buttons -->
+                        <div class="d-lg-none mt-3 pt-3 border-top">
+                            <a id="loginNavBtnMobile" class="nav-item nav-link login-nav-item" href="login.html"><i class="fas fa-sign-in-alt me-2"></i>Login</a>
+                            <a id="logoutNavBtnMobile" class="nav-item nav-link logout-nav-item d-none" href="javascript:void(0);" onclick="logoutUser();"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+                        </div>
                     </div>
-                    <div class="d-none d-lg-flex">
+                    <!-- Desktop Login/Logout Buttons -->
+                    <div class="d-none d-lg-flex gap-2">
+                        <a id="loginNavBtn" class="btn btn-outline-primary border-2 login-nav-btn" href="login.html"><i class="fas fa-sign-in-alt me-2"></i>Login</a>
+                        <a id="logoutNavBtn" class="btn btn-outline-danger border-2 logout-nav-btn d-none" href="javascript:void(0);" onclick="logoutUser();"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
                         <a class="btn btn-outline-primary border-2" href="https://htmlcodex.com/downloading/?item=3631">Buy Pro Version</a>
                     </div>
                 </div>
@@ -86,7 +94,10 @@
                             </div>
                         </div>
                         <p class="fs-5 mb-5 animated slideInDown mx-3 mx-md-5 px-3 px-md-5">Your premier destination for professional models and unforgettable experiences.<br> Connect with top talent for your next project.</p>
-                        <a href="" class="btn btn-outline-primary border-2 py-3 px-5 animated slideInDown">Explore More</a>
+                        <div class="d-flex flex-column gap-3 animated slideInDown">
+                            <a href="login.html" class="btn btn-primary py-3 px-5 fw-bold" style="border-radius: 50px;"><i class="fas fa-sign-in-alt me-2"></i>Login to Access</a>
+                            <a href="javascript:void(0);" onclick="return requireLogin('team.html');" class="btn btn-outline-primary border-2 py-3 px-5">Explore More</a>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -99,7 +110,10 @@
                             </div>
                         </div>
                         <p class="fs-5 mb-5 animated slideInDown mx-3 mx-md-5 px-3 px-md-5">Expert representation and career development for aspiring and established models.<br> Building star-studded portfolios and unforgettable moments.</p>
-                        <a href="" class="btn btn-outline-primary border-2 py-3 px-5 animated slideInDown">Explore More</a>
+                        <div class="d-flex flex-column gap-3 animated slideInDown">
+                            <a href="login.html" class="btn btn-primary py-3 px-5 fw-bold" style="border-radius: 50px;"><i class="fas fa-sign-in-alt me-2"></i>Login to Access</a>
+                            <a href="javascript:void(0);" onclick="return requireLogin('team.html');" class="btn btn-outline-primary border-2 py-3 px-5">Explore More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,7 +165,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Naomy Olsen <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>
@@ -177,7 +191,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Pamela Torney <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>
@@ -203,7 +217,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Joanne Irwin <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>
@@ -229,7 +243,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Gillian Rowe <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>
@@ -255,7 +269,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Naomy Olsen <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>
@@ -281,7 +295,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Pamela Torney <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>
@@ -307,7 +321,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Joanne Irwin <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>
@@ -333,7 +347,7 @@
                                 <span>89</span>
                             </div>
                         </div>
-                        <a class="team-name" href="contact.html">
+                        <a class="team-name" href="javascript:void(0);" onclick="return requireLogin('contact.html');">
                             <h5 class="text-uppercase mb-0">Gillian Rowe <span class="badge bg-primary ms-2">Book Now</span></h5>
                         </a>
                     </div>

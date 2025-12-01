@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login - Poseify</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-lg-5">
+            <div class="container-fluid px-0">
+                <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+                    <h2 class="mb-0 text-primary text-uppercase"><i class="fa-regular fa-face-smile me-1"></i>Poseify</h2>
+                </a>
+                <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto p-4 p-lg-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">Services</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="team.html" class="dropdown-item">Our Models</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Header End -->
+
+    <!-- Login Section Start -->
+    <div class="login-section">
+        <div class="container-fluid">
+            <div class="row g-0 min-vh-100 align-items-center">
+                <!-- Left Side - Branding & Message -->
+                <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center login-left">
+                    <div class="login-left-content text-center px-5">
+                        <h1 class="display-3 text-primary mb-4 fw-bold">Poseify</h1>
+                        <h2 class="display-5 text-white mb-4">Access Your Exclusive Account</h2>
+                        <p class="fs-5 text-light mb-5">Sign in to explore elite modeling opportunities, book sessions, and manage your portfolio with Poseify - your premier modeling agency.</p>
+                        <div class="d-flex justify-content-center gap-3 mb-5">
+                            <i class="fas fa-star text-primary" style="font-size: 2rem;"></i>
+                            <i class="fas fa-camera text-primary" style="font-size: 2rem;"></i>
+                            <i class="fas fa-heart text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <p class="text-muted fs-6">Join thousands of successful models and brands on Poseify</p>
+                    </div>
+                </div>
+
+                <!-- Right Side - Login Form -->
+                <div class="col-lg-6 d-flex align-items-center justify-content-center login-right">
+                    <div class="login-form-container w-100 px-4 px-md-5">
+                        <div class="text-center mb-5">
+                            <h3 class="display-6 text-primary fw-bold mb-3">Welcome Back</h3>
+                            <p class="text-light fs-6">Sign in to your Poseify account</p>
+                        </div>
+
+                        <!-- Login Form -->
+                        <form id="loginForm" class="login-form">
+                            <div class="mb-4">
+                                <label for="email" class="form-label fw-bold">Email Address</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-dark border-secondary">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                    </span>
+                                    <input type="email" class="form-control bg-dark border-secondary text-light" id="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label fw-bold">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-dark border-secondary">
+                                        <i class="fas fa-lock text-primary"></i>
+                                    </span>
+                                    <input type="password" class="form-control bg-dark border-secondary text-light" id="password" name="password" placeholder="Enter your password" required>
+                                </div>
+                            </div>
+
+                            <!-- Demo Credentials Info -->
+                            <div class="alert alert-secondary border-0 mb-4" role="alert">
+                                <small class="text-light">
+                                    <strong>Demo Login:</strong><br>
+                                    <i class="fas fa-envelope text-primary me-2"></i>admin@poseify.com<br>
+                                    <i class="fas fa-lock text-primary me-2"></i>password123
+                                </small>
+                            </div>
+
+                            <!-- Error Message -->
+                            <div id="loginError" class="alert alert-danger d-none border-0" role="alert">
+                                <i class="fas fa-exclamation-circle me-2"></i>Invalid email or password. Please try again.
+                            </div>
+
+                            <!-- Login Button -->
+                            <button type="submit" class="btn btn-primary btn-lg w-100 py-3 mb-3 fw-bold" style="border-radius: 50px;">
+                                <span id="loginButtonText">Sign In</span>
+                                <span id="loginSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+                            </button>
+
+                            <!-- Remember Me & Forgot Password -->
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input bg-dark border-secondary" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label text-light" for="rememberMe">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <a href="#" class="text-primary text-decoration-none fw-bold">Forgot Password?</a>
+                            </div>
+                        </form>
+
+                        <!-- Divider -->
+                        <div class="text-center my-4">
+                            <small class="text-muted">Don't have an account? <a href="index.html" class="text-primary fw-bold">Return Home</a></small>
+                        </div>
+
+                        <!-- Back Button -->
+                        <a href="index.html" class="btn btn-outline-primary border-2 w-100 py-3 fw-bold" style="border-radius: 50px;">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Section End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Login Script -->
+    <script>
+        $(window).on('load', function() {
+            $('#spinner').fadeOut('slow', function() {
+                $(this).addClass('d-none');
+            });
+        });
+
+        // Handle login form submission
+        $('#loginForm').on('submit', function(e) {
+            e.preventDefault();
+            
+            const email = $('#email').val();
+            const password = $('#password').val();
+            const loginError = $('#loginError');
+            
+            // Show spinner
+            $('#loginSpinner').removeClass('d-none');
+            $('#loginButtonText').text('Signing in...');
+            
+            // Simulate API call delay
+            setTimeout(function() {
+                // Static credentials
+                const validEmail = 'admin@poseify.com';
+                const validPassword = 'password123';
+                
+                // Validate credentials
+                if (email === validEmail && password === validPassword) {
+                    // Login successful
+                    loginError.addClass('d-none');
+                    
+                    // Store login status in session storage
+                    sessionStorage.setItem('poseifyLoggedIn', 'true');
+                    sessionStorage.setItem('poseifyUser', email);
+                    
+                    // Show success message with custom alert
+                    const successAlert = $('<div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fas fa-check-circle me-2"></i><strong>Success!</strong> Welcome to Poseify. Redirecting...<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                    $('#loginError').after(successAlert);
+                    
+                    // Redirect to home page after brief delay
+                    setTimeout(function() {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    // Login failed
+                    loginError.removeClass('d-none');
+                    $('#loginSpinner').addClass('d-none');
+                    $('#loginButtonText').text('Sign In');
+                    
+                    // Clear password field
+                    $('#password').val('');
+                    
+                    // Shake animation
+                    $('#loginForm').addClass('shake-animation');
+                    setTimeout(function() {
+                        $('#loginForm').removeClass('shake-animation');
+                    }, 500);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

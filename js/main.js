@@ -1,6 +1,71 @@
 (function ($) {
     "use strict";
 
+    // ===== LOGIN FUNCTIONALITY =====
+    
+    // Check if user is logged in
+    window.isUserLoggedIn = function() {
+        return sessionStorage.getItem('poseifyLoggedIn') === 'true';
+    };
+
+    // Redirect to login if not logged in
+    window.requireLogin = function(redirectAfterLogin) {
+        if (!isUserLoggedIn()) {
+            // Store the page they want to visit after login
+            sessionStorage.setItem('redirectAfterLogin', redirectAfterLogin || 'index.html');
+            window.location.href = 'login.html';
+            return false;
+        }
+        return true;
+    };
+
+    // Update login/logout button visibility
+    window.updateLoginButtonVisibility = function() {
+        const isLoggedIn = isUserLoggedIn();
+        
+        // Desktop buttons
+        const loginBtn = document.getElementById('loginNavBtn');
+        const logoutBtn = document.getElementById('logoutNavBtn');
+        
+        // Mobile buttons
+        const loginBtnMobile = document.getElementById('loginNavBtnMobile');
+        const logoutBtnMobile = document.getElementById('logoutNavBtnMobile');
+        
+        if (loginBtn) {
+            isLoggedIn ? loginBtn.classList.add('d-none') : loginBtn.classList.remove('d-none');
+        }
+        if (logoutBtn) {
+            isLoggedIn ? logoutBtn.classList.remove('d-none') : logoutBtn.classList.add('d-none');
+        }
+        if (loginBtnMobile) {
+            isLoggedIn ? loginBtnMobile.classList.add('d-none') : loginBtnMobile.classList.remove('d-none');
+        }
+        if (logoutBtnMobile) {
+            isLoggedIn ? logoutBtnMobile.classList.remove('d-none') : logoutBtnMobile.classList.add('d-none');
+        }
+    };
+
+    // Logout user
+    window.logoutUser = function() {
+        sessionStorage.removeItem('poseifyLoggedIn');
+        sessionStorage.removeItem('poseifyUser');
+        updateLoginButtonVisibility();
+        alert('You have been logged out.');
+        window.location.href = 'index.html';
+    };
+
+    // Check if user should be redirected after login
+    $(document).ready(function() {
+        var redirectAfterLogin = sessionStorage.getItem('redirectAfterLogin');
+        if (redirectAfterLogin && isUserLoggedIn()) {
+            sessionStorage.removeItem('redirectAfterLogin');
+            // Redirect will happen based on button click
+        }
+        
+        // Update login button visibility
+        updateLoginButtonVisibility();
+    });
+
     // Spinner
     var spinner = function () {
         $(window).on('load', function () {
